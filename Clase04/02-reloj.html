@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf8">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			background-color: black;
+		}
+		div#mascara {
+			width: 400px;
+			height: 400px;
+			margin: 50px auto;
+			border-radius: 50%;
+			border: 20px solid white;
+			position: relative;
+		}
+
+		div.manecilla {
+			width: 50%;
+			height: 6px;
+			background: -webkit-linear-gradient(left,red,green);
+			position: absolute;
+			top: 50%;
+			/*transform: rotate(90deg);*/
+			transform-origin: 100% 50% /* right center*/
+		}
+	</style>
+</head>
+<body>
+
+	<div id="mascara">
+		<div class="manecilla segundero"></div>	
+	</div>
+
+
+<script>
+	var setearHora = function() {
+		var fecha = new Date();
+		console.log(fecha);
+		var segundos = fecha.getSeconds();
+		console.log(segundos)
+		//segundos++;
+		var angulo = segundos * 360/60 + 90;
+		var segundero = document.getElementsByClassName("segundero")[0];
+
+		segundero.style.transform = "rotate(" + angulo + "deg)";
+	}
+
+	//var segundos = 0;
+	setearHora();
+	setInterval(setearHora, 1000);
+
+</script>
+
+</body>
+</html>

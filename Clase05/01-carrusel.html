@@ -13,17 +13,22 @@
 			position: absolute;
 			top: 0;
 			left: 0;
+			transition: all 350ms;
+			border: 1px solid black;
+			box-sizing: border-box;
+			z-index: 0;
 		}
 		.centrada {
-			transform: translateX(0px);
+			transform: translateX(0px) scale(2);
+			z-index: 5;
 		}
 		.izq-2 {transform: translateX(-240px);}
 		.izq-1 {transform: translateX(-480px);}
-		.izq-0 {transform: translateX(-720px);}
+		.izq-0 {transform: translateX(-720px); opacity: 0;}
 
 		.der-2 {transform: translateX(240px);}
 		.der-1 {transform: translateX(480px);}
-		.der-0 {transform: translateX(720px);}
+		.der-0 {transform: translateX(720px); opacity: 0;}
 	</style>
 </head>
 <body>
@@ -38,7 +43,7 @@
 		<img src="img/imagen07.jpg" class="der-0">
 	</div>
 
-	<script src="js-carrusel.js"></script>
+		<script src="js-carrusel.js"></script>
 
-</body>
-</html>
+	</body>
+	</html>

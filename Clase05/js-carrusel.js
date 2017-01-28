@@ -1,0 +1,1 @@
+var lista = ["izq-0","izq-1","izq-2","centrada","der-2","der-1","der-0"];

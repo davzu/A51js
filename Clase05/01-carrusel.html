@@ -2,8 +2,41 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			position: relative;
+		}
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.centrada {
+			transform: translateX(0px);
+		}
+		.izq-2 {transform: translateX(-240px);}
+		.izq-1 {transform: translateX(-480px);}
+		.izq-0 {transform: translateX(-720px);}
+
+		.der-2 {transform: translateX(240px);}
+		.der-1 {transform: translateX(480px);}
+		.der-0 {transform: translateX(720px);}
+	</style>
 </head>
 <body>
+
+	<div>
+		<img src="img/imagen01.jpg" class="izq-0">
+		<img src="img/imagen02.jpg" class="izq-1">
+		<img src="img/imagen03.jpg" class="izq-2">
+		<img src="img/imagen04.jpg" class="centrada">
+		<img src="img/imagen05.jpg" class="der-2">
+		<img src="img/imagen06.jpg" class="der-1">
+		<img src="img/imagen07.jpg" class="der-0">
+	</div>
 
 	<script src="js-carrusel.js"></script>
 

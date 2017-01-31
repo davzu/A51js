@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<body>
+	
+	<table>
+		<tr>
+			<th>Nombre</th>
+			<th>Curso</th>
+		</tr>
+	</table>	
+
+
+	<script>
+		var alumnos = [
+			{nombre: "Alumno1", curso: "Curso1"},
+			{nombre: "Alumno2", curso: "Curso2"},
+			{nombre: "Alumno3", curso: "Curso3"},
+			{nombre: "Alumno4", curso: "Curso4"}
+		];
+
+		var table = document.querySelector("table");
+
+		alumnos.forEach(function(item){
+			// crea una fila
+			var tr = document.createElement("tr");
+
+			// create la celda para el nombre
+			var td1 = document.createElement("td");
+			td1.innerHTML = item.nombre;
+
+			// crea la celda para el curso
+			var td2 = document.createElement("td");
+			td2.innerHTML = item.curso;
+
+			// añadimos las celdas a la fila
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+
+			table.appendChild(tr);
+
+		});
+
+		alumnos[3].edad = 44;
+		console.log(alumnos[3].edad);
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		.btn {
+			width: 300px;
+			height: 300px;
+			font-size: 40px;
+			color: white;
+			font-weight: bold;
+			text-transform: uppercase;
+			background-color: red
+		}
+
+		.btn.verde {
+			background-color: green
+		}
+
+		.btn.verde.reducido {
+			transform: scale(.5);
+		}
+	</style>
+<body>
+
+	<button class="btn">Presióname</button>
+
+
+	<script>
+		const btn = document.querySelector(".btn");
+
+		/*btn.addEventListener("click", function() {
+			alert("Eureka, presionaste bien!");
+		});*/
+
+		// ES6 función flecha
+		/*btn.addEventListener("click", () => {
+			alert("Eureka, presionaste bien!")
+		});*/
+
+		/*btn.addEventListener("click", function() {
+			// this está haciendo referencia al objecto botón
+			this.classList.add("verde");
+		});*/
+
+		// la función flecha se distingue por el alcance, en este caso this hace referencia al objeto document
+		/*btn.addEventListener("click", () => {
+			console.log(this);
+			//this.classList.add("verde");
+		});*/
+
+		/*btn.addEventListener("click", function() {
+			// console.log(this);
+			this.classList.add("verde");
+
+			setTimeout(function() {
+				// console.log(this); // el botón no está dentro del timer
+				self.classList.add("reducido");
+			}, 1000);
+		});*/
+
+		/*btn.addEventListener("click", function() {
+			var self = this;
+			// console.log(this);
+			this.classList.add("verde");
+
+			setTimeout(function() {
+				// console.log(this); // el botón no está dentro del timer
+				self.classList.add("reducido");
+			}, 1000);
+		});*/
+
+		btn.addEventListener("click", function() {
+			this.classList.add("verde");
+
+			setTimeout( () => {
+				console.log(this);
+				// toggle => si el elemento no tiene la clase, se le agrega y si la tiene, se la quita
+				this.classList.toggle("reducido");
+			}, 1000);
+		});
+
+		claseVerde = "verde";
+		console.log(`Clase = ${claseVerde}`);
+
+
+
+	</script>
+
+
+
+</body>
+</html>

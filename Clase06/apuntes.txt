@@ -1,0 +1,7 @@
+JSON => JavaScript Object Notation / ES 5 solo JSON como objeto
+En ES 6 también están los Mapper y Set
+
+localstorage
+
+ES6 => funciones flecha
+La diferencia es el contexto

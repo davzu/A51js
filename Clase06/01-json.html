@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<body>
+	
+	
+
+
+	<script>
+		var persona = {};
+		persona.edad = 40;
+		persona.dni = "12345678";
+		persona.sexo = "masculino";
+
+		console.log(persona);
+
+		persona.cursos = ["HTML","JavaScript","NodeJS","AngularJS"];
+		console.log(persona);
+
+		console.log("cursos" + persona.cursos);
+
+		persona.cursos.push("Phaser");
+
+		console.log(persona);
+
+		var jugador = {
+			velocidad: 40,
+			posicionInicial: {x:450, y:340},
+			vidas: 10,
+			revivir: function() {
+				console.log("El jugador revivió");
+			}
+		}
+
+		console.log(jugador);
+
+		jugador.revivir();
+
+		var agregarElemento = function(elemento) {
+			console.log("Velocidad = " + elemento.velocidad);
+		}
+
+		agregarElemento(jugador);
+
+
+
+	</script>
+
+</body>
+</html>

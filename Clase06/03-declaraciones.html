@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<body>	
+
+
+	<script>
+		/*var nombre = "Sergio";
+		let apellido = "Hidalgo";
+		const edad = 40;*/
+
+		let nombre = "Sergio Hidalgo";
+		var activo = 1;
+
+		var usoLet = function() {
+			nombre = "David";
+			console.log("entro a usoLet()");
+			console.log(nombre);
+		}
+
+		if(activo == 1) {
+			// reasignando variable, el resultado es el mismo que nombre = nombre + " (activo)"
+			//var nombre = nombre + " (activo)";
+
+			// let nombre solo existe dentro del ámbito del if, se usa let cuando se sabe que el tipo de variable va a cambiar constantemente. Cuando sabemos que el tipo no va a cambiar constantemente no se recomienda usarlo
+			let nombre = " (activo)";
+			console.log(nombre);
+		}
+
+		console.log(nombre);
+
+		const edad = 40;
+
+		console.log("Edad = " + edad);
+
+		/*edad = 40;
+		edad = 50;*/
+
+		const persona = {nombre: "Iván"}
+
+		console.log(persona);
+
+		// persona = {nombre: "Sergio"};
+
+		persona.nombre = "Sergio";
+		persona.edad = 40;
+
+		console.log(persona);
+
+		// constant no permite cambiar valores para los datos primitivos
+
+		console.log("usoLet()");
+		usoLet();
+
+		console.log("Nombre después de var en usoLet() ::: " + nombre);
+
+		// Object.freeze sirve para que una variable no sea modificada sea el tipo que fuese
+		Object.freeze(persona);
+
+		persona.nombre = "Javier";
+		persona.apellido = "Hidalgo";
+
+		console.log(persona);
+
+		
+
+	</script>
+
+
+
+</body>
+</html>

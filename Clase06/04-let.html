@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<body>	
+
+
+	<script>
+		
+		for(var i = 0; i < 10; i++) {
+			setTimeout(function() {
+				console.log("Timer #" + i);
+			}, 1000);
+		}
+		// los timer funcionan después del for, es por eso que siempre pinta 10 porque su alcance es global
+		console.log("******")
+
+		for(let i = 0; i < 10; i++) {
+			setTimeout(function() {
+				console.log("Time #" + i);
+			}, 1000)
+		}
+
+	</script>
+
+
+
+</body>
+</html>

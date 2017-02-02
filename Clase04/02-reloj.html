@@ -22,32 +22,62 @@
 		div.manecilla {
 			width: 50%;
 			height: 6px;
-			background: -webkit-linear-gradient(left,red,green);
 			position: absolute;
 			top: 50%;
-			/*transform: rotate(90deg);*/
-			transform-origin: 100% 50% /* right center*/
+			transform: rotate(90deg);
+			transform-origin: 100% 50%; /* right center*/
+			transition: transform 1000ms linear;
+			animation-fill-mode: forwards;
+		}
+
+		div.manecilla.segundero {
+			background-color: red;
+		}
+
+		div.manecilla.minutero {
+			background-color: yellow;
+		}
+
+		div.manecilla.horario {
+			background-color: skyblue;
 		}
 	</style>
 </head>
 <body>
 
 	<div id="mascara">
-		<div class="manecilla segundero"></div>	
+		<div class="manecilla segundero"></div>
+		<div class="manecilla minutero"></div>
+		<div class="manecilla horario"></div>
 	</div>
 
 
+
 <script>
+	var anguloSegundos = 0, anguloMinutos = 0, anguloHoras = 0;
+
 	var setearHora = function() {
 		var fecha = new Date();
-		console.log(fecha);
 		var segundos = fecha.getSeconds();
-		console.log(segundos)
+		var minutos = fecha.getMinutes();
+		var horas = fecha.getHours();
+		console.log("fecha ::: " + fecha);
 		//segundos++;
-		var angulo = segundos * 360/60 + 90;
+		anguloSegundos = segundos * 360/60 + 90;
 		var segundero = document.getElementsByClassName("segundero")[0];
+		segundero.style.transform = "rotate(" + anguloSegundos + "deg)";
 
-		segundero.style.transform = "rotate(" + angulo + "deg)";
+		anguloMinutos = minutos * 360/60 + 90;
+		var minutero = document.getElementsByClassName("minutero")[0];
+		minutero.style.transform = "rotate(" + anguloMinutos + "deg)";
+
+		anguloHoras = horas * 360/12 + 90;
+		var horario = document.getElementsByClassName("horario")[0];
+		horario.style.transform = "rotate(" + anguloHoras + "deg)";
+
+		console.log(anguloSegundos);
+		console.log(anguloMinutos);
+		console.log(anguloHoras);
 	}
 
 	//var segundos = 0;

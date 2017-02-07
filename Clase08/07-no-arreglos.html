@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<ul>
+		<li><spam>Alumno 1</spam></li>
+		<li>Alumno 2</li>
+		<li>Alumno 3</li>
+		<li>Alumno 4</li>
+		<li>Alumno 5</li>
+	</ul>
+
+	<ol></ol>
+
+<script>
+	const listaLI = document.querySelectorAll("li");
+	const listaItems = Array.from(listaLI);
+
+	const listaAlumnos = listaItems.map(alumno => alumno.textContent);
+
+	let listaAuxiliar = document.querySelector("ol");
+cont = 1;
+	for(let alumno of listaAlumnos) {
+		let cadena = `<li>${alumno}</li>`;
+		listaAuxiliar.innerHTML += cadena;
+	}
+</script>
+
+</body>
+</html>

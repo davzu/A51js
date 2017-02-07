@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	const equipos = ["Universitario","Alianza Lima","Cristal","Municipal","Melgar"];
+	// proto => protoType
+	const jugadores = [
+	{nombre:"Raul", edad:"20"/*, posicion:"Defensa"*/}, 
+	{nombre:"Jorge",  edad:"24", posicion:"Delantero"}];
+
+	/*
+	equipos.forEach((elemento, indice) => {
+		console.log(`[${indice}] = [${elemento}]`);
+	});
+	*/
+
+	// in => solamente para recuperar las posiciones
+	for(let equipo in equipos) {
+		console.log(equipo);
+	}
+
+	// of => para recuperar los valores
+	for(let equipo of equipos) {
+		console.log(equipo);
+	}
+
+	// retorna un array
+	for(let equipo of equipos.entries()) {
+		console.log(equipo);
+	}
+
+	// desestructuración, a partir de ES6
+	for(let [indice, equipo] of equipos.entries()) {
+		console.log(`[${indice}, ${equipo}]`)
+	}
+
+
+
+	for(let jugador in jugadores) {
+		console.log(jugador);
+	}
+
+	for(let jugador of jugadores) {
+		console.log(`Nombre: ${jugador.nombre} Edad: ${jugador.edad} Posicion: ${jugador.posicion}`);
+	}
+
+	for(let jugador of jugadores.entries()) {
+		console.log(jugador);
+	}
+
+
+</script>
+
+</body>
+</html>

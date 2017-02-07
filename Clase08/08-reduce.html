@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	const suma = function() {
+		// arguments es una lista de todos los argumentos que se le pasa a la función
+		// no funciona con las funciones flecha, se debe especificar function () .....
+		//console.log(arguments);
+		const args = Array.from(arguments);
+		return args.reduce((valorPrevio, valorActual) => valorPrevio + valorActual);
+		/*let total = 0;
+		for(let item of args) {
+			total += item;
+		}
+		return total;*/
+	}
+
+	console.log(suma(20,30,54));
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		*{
+			font-family: Verdana;
+			font-size: 40px
+		}
+	</style>
+</head>
+<body>
+
+
+	<script>
+		const perro = {nombre: "Tati", color: "caramelo", sexo: "hembra", raza: "bulldog", dueno: "Jose"};
+
+		// spreads => array
+		const editable = function(textos, ...valores) {
+			console.log(textos);
+			console.log(valores);
+
+			let cadena = "";
+
+			textos.forEach((texto,ind) => {
+				console.log(texto + " ::: " + ind);
+				//cadena += texto + (valores[ind] || "");
+				cadena += `${texto}<mark><span contenteditable>${valores[ind] || ""}</span></mark>`;
+			});
+
+			return cadena;
+		}
+
+
+		//document.body.innerHTML = `Mi perra se llama ${perro.nombre}, es de color ${perro.color} y es ${perro.sexo}.`;
+
+		/*document.body.innerHTML = `Mi perra se llama 
+		<span contenteditable>${perro.nombre}</span>
+		, es de color 
+		<span contenteditable>${perro.color}</span>
+		 y es 
+		 <span contenteditable>${perro.sexo}</span>
+		 .`;*/
+
+		document.body.innerHTML = editable`Mi perra se llama ${perro.nombre}, es de color ${perro.color} y es ${perro.sexo}.`;
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

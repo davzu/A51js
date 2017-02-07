@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<script>
+		const carrera = "RPP 10K";
+		const carrera2 = "RPP 15K";
+
+		const ganadores = ["Piero Vargas","Erika Suazo","Viviana Alonso"];
+
+		//const lista = ganadores.map((ganador,ind) => ({carrera: carrera, ganador: ganador, posicion: ind + 1}));
+
+		// En ES6, cuando el valor tiene el mismo nombre que la variale se escribe únicamente una sola vez
+		const lista = ganadores.map((ganador,ind) => ({carrera, ganador, posicion: ind +1}));
+
+		console.table(lista);
+
+
+
+
+	</script>
+
+</body>
+</html>

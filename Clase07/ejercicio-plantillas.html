@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<table></table>
+
+	<script>
+		const ninos = [
+			{nombre: "Juan", juguetesDeseados: ["Carro", "Muñeco", "Avión"]},
+			{nombre: "Alicia", juguetesDeseados: ["Bote", "Helicóptero", "Piscina"]},
+			{nombre: "Marcos", juguetesDeseados: ["Pistola", "Pelota", "Castillo"]},
+			{nombre: "Mayra", juguetesDeseados: ["Paletas", "Casa", "Barbie"]}
+		];
+
+		console.table(ninos);
+
+		const tabla = document.querySelector("table");
+
+		const contenido = 
+			`${ninos.map(nino => `
+				<tr>
+					<td>${nino.nombre}</td>
+					<td>
+						<ul>
+							${nino.juguetesDeseados.map(juguete => `<li>${juguete}</li>`).join("")}
+						</ul>
+					</td>
+				</tr>`
+				).join("")
+			}`;
+
+		tabla.innerHTML = contenido;
+
+	</script>
+
+</body>
+</html>

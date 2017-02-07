@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	const usuarios = [
+		{nombre: "Sergio", dni: "12345678"},
+		{nombre: "Carmen", dni: "23456789"},
+		{nombre: "Raúl", dni: "34567890"},
+		{nombre: "Diego", dni: "45678901"},
+		{nombre: "Mariella", dni: "56789012"}
+	];
+
+	const persona = usuarios.find(usuario => usuario.dni === "23456789");
+	console.log(persona);
+	const posicion = usuarios.findIndex(usuario => usuario.dni === "23456789")
+	console.log(posicion);
+	usuarios.splice(posicion);
+	console.log(usuarios);
+</script>
+</body>
+</html>

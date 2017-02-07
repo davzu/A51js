@@ -1,0 +1,18 @@
+promesas
+
+resolve
+reject
+pending
+
+then
+catch
+
+*** ES 6 lo incluye
+
+*** ES 5 usa librería
+$q
+$when
+
+==========
+
+XMLHTTPRequest

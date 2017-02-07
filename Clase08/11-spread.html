@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	const pcs = ["pc recepcion", "pc gerencia", "pc sistemas", "pc disño"];
+	const impresoras = ["impresora en red", "impresora de contabilidad", "impresora  de gerencia"];
+	const muebles = ["escritorio gerencia", "librero contabilidad"];
+	const utiles = ["lapiceros sistemas","hojas secretaria"];
+
+	/*const inventario = [];
+
+	pcs.forEach((item) => inventario.push(item));
+	impresoras.forEach((item) => inventario.push(item));
+	console.log(inventario);*/
+
+	const inventario = [...pcs, ...impresoras, ...muebles];
+	inventario.push(...utiles);
+	console.log(inventario);
+
+
+
+</script>
+</body>
+</html>

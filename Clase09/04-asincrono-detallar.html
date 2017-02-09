@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<form>
+	<input type="text" id="nombre">
+	<input type="text" id="edad">
+</form>
+	
+
+<script>
+	/* estados
+		0: pedido o la requisición no ha sido iniciada
+
+		estos estados los envía el servidor
+		1: la conexión con el servidor ha sido establecida
+		2: pedido o requisición ha sido recibida
+		3: pedido o requisición se está procesando
+		4: petición ha sido atendida
+	*/
+
+	const obj = new XMLHttpRequest();
+
+	// evento que me permite monitorear los estados
+	obj.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200) {
+			console.log(this.readyState);
+			console.log(this.status);
+			console.log(this.responseText);
+			const registro = JSON.parse(this.responseText);
+
+			const nombreInput = document.querySelector("#nombre"),
+				edadInput = document.querySelector("#edad");
+
+			/*nombre.value = registro[0].nombre;
+			edad.value = registro[0].edad;*/
+
+			const {nombre, edad} = registro[0];
+
+			nombreInput.value = nombre;
+			edadInput.value = edad;
+		}
+
+	}
+
+	obj.onerror = function() {
+		console.log("Error");
+		console.log("Error statusText ::: " + this.statusText);
+	}
+
+	// 1: método 2: URL 3: asíncrono: true|false
+	obj.open("GET", "http://javascript.tibajodemanda.com/detallar/3", true);
+	obj.send();
+
+
+
+
+
+
+</script>
+</body>
+</html>

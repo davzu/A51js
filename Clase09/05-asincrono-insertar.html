@@ -1,0 +1,69 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<form>
+	<input type="text" id="nombre" placeholder="Nombre">
+	<input type="text" id="apellido" placeholder="Apellido">
+	<input type="text" id="edad" placeholder="Edad">
+	<input type="button" id="btnInsertar" value="Insertar">
+</form>
+
+<table></table>
+
+<script>
+	/* estados
+		0: pedido o la requisición no ha sido iniciada
+
+		estos estados los envía el servidor
+		1: la conexión con el servidor ha sido establecida
+		2: pedido o requisición ha sido recibida
+		3: pedido o requisición se está procesando
+		4: petición ha sido atendida
+	*/
+
+
+
+	const obj = new XMLHttpRequest();
+
+	// evento que me permite monitorear los estados
+	obj.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200) {
+			console.log(this.readyState);
+			console.log(this.status);
+			console.log(this.responseText);
+			const registro = JSON.parse(this.responseText);
+			const {nombre, edad} = registro[0];
+
+		}
+
+	}
+
+	obj.onerror = function() {
+		console.log("Error");
+		console.log("Error statusText ::: " + this.statusText);
+	}
+
+	// 1: método 2: URL 3: asíncrono: true|false
+	obj.open("POST", "http://javascript.tibajodemanda.com/insertar", true);
+	
+
+	const btnInsertar = document.querySelector("#btnInsertar");
+	btnInsertar.addEventLister("click", () =>) {
+		const nombre = document.querySelector("#nombre"),
+			apellido = document.querySelector("#apellido"),
+			edad = document.querySelector("#edad");
+		const data = new FormData();
+		data.append("nombre", nombre.value);
+		data.append("apellido", apellido.value);
+		data.append("edad", edad.value);
+		obj.send(data);	
+	}
+
+</script>
+</body>
+</html>

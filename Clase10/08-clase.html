@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title></title>
+</head>
+<body>
+
+	<img src="">
+
+<script>
+	class Vehiculo {
+		constructor(marca, modelo, anno) {
+			this.marca = marca;
+			this.modelo = modelo;
+			this.anno = anno;
+		}
+
+		acelerar() {
+			console.log("Acelerando");
+		}
+
+		descripcion() {
+			return `Marca: ${this.marca}, Modelo: ${this.modelo}, Vehiculo: ${this.anno}`;
+		}
+	}
+
+	const vehiculo = new Vehiculo("KIA","Rio",2017);
+	vehiculo.acelerar();
+	console.log(vehiculo.descripcion());
+
+	vehiculo.marca = "Hyundai";
+	vehiculo.modelo = "Santa Fe";
+	vehiculo.anno = 2009;
+	console.log(vehiculo.descripcion());
+
+</script>
+
+</body>
+</html>

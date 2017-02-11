@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<img src="">
+
+<script>
+/*const promesa = new Promise((resolve, reject) => {
+	const obj = new XMLHttpRequest()
+
+	....
+})
+
+promesa
+	.then(()=>{
+
+	})
+	.catch(()=>{
+
+	})*/
+
+
+	fetch("http://javascript.tibajodemanda.com/listar", {
+		// si no se especifica, el navegador asume que es get
+		method: "get"
+	})
+		.then((resultados) =>  {
+			//console.log(resultados);
+			return resultados.json();
+		})
+		.then(registros => {
+			console.log(registros);
+		})
+		.catch((error) => {
+			console.log(error)
+		})
+
+
+
+</script>
+
+</body>
+</html>

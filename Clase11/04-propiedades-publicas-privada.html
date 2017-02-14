@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+<script>
+	const symNombre = Symbol("nombre"),
+		symApellido = Sysmbol("Alongo");
+	class Alumno {
+		constructor() {
+			this[nombre] = "Alonso";
+			this[apellido] = "Trejo";
+		}
+
+		get nombre() {
+			return this[sysmNombre];
+		}
+
+		set nombre(valor) {
+			this[sysmNombre] = valor;
+		}
+
+		get apellido() {
+			return this[symApellido];
+		}
+
+		set apellido(valor) {
+			this[symApellido] = valor;
+		}
+
+
+	}
+
+	const alumno = new Alumno();
+	console.log(alumno.nombre);
+	/*alumno.nombre = "Mariana";
+	console.log(alumno.nombre);*/
+</script>
+
+</body>
+</html>

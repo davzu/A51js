@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h1></h1>
+
+	<script src="reloj.js"></script>
+	<script src="alarma.js"></script>
+	<script src="utiles.js"></script>
+	<script>
+		const h1 = document.querySelector("h1")
+		const horaAlarma = {horas: 21, minutos: 01}
+
+		const alarma = new Alarma(h1, horaAlarma)
+		alarma.iniciar()
+
+		const utiles = new Utilies();
+		console.log(utiles.obtenerTiempo());
+
+	</script>
+
+</body>
+</html>
